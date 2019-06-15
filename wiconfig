@@ -404,17 +404,8 @@ function menu {
 
 function password {
 	stty -echo
-	read -r pass1?"Enter the password for ${nwid[$choice]} (will not echo): "
+	read -r pass1?"Enter the password for ${nwid[$choice]} (will not echo):"
 	echo
-	read -r pass2?"Enter the password for ${nwid[$choice]} (again): "
-	echo
-	stty echo
-	# If passwords do not match or are blank
-	if [ "X$pass1" != "X$pass2" ] || [ "X$pass1" = X ]; then
-		echo "Passwords do not match or are invalid"
-		sleep 1
-		password
-	fi
 }
 
 # Determine if we are using WPA or WEP
